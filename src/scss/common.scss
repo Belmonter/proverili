@@ -1,0 +1,120 @@
+// Подчеркивание при наведении (Меню)
+
+.underline-one {
+  color: $mainColor; /* Цвет обычной ссылки */
+  position: relative;
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+.underline-one:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 8px);
+  bottom: 0;
+  width: 0;
+  height: 3px; /* Высота линии */
+  background-color: $mainGreen; /* Цвет подчеркивания при исчезании линии*/
+  transition: all 0.5s; /* Время эффекта */
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.underline-one:hover:after {
+  content: "";
+  width: calc(100% - 16px);
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px; /* Высота линии */
+  background-color: $mainGreen; /* Цвет подчеркивания при появлении линии*/
+  transition: all 0.5s; /* Время эффекта */
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.menu-item-active:after {
+  content: "";
+  width: calc(100% - 16px);
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px; /* Высота линии */
+  background-color: $mainGreen; /* Цвет подчеркивания при появлении линии*/
+  transition: all 0.5s; /* Время эффекта */
+}
+
+// Заголовок подменю
+.submenu-title {
+  font-weight: 500;
+  line-height: math.div(20, 16);
+  color: $mainColor;
+}
+
+// Loader
+.preloader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    animation-duration: 1s;
+    animation-name: loaderAnimation;
+    animation-iteration-count: infinite;
+  }
+  &.absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.yz {
+    min-height: 500px;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &.hide {
+    display: none;
+  }
+}
+
+@keyframes loaderAnimation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mt32 {
+  margin-top: 32px;
+}
+
+
+
+.submenu__container {
+  position: relative;
+}
+.rel {
+  position: relative;
+  @media (max-width: 630px) {
+    position: static;
+  }
+}
+
+input {
+  -webkit-appearance:none;
+  outline: none;
+}
+

@@ -1,0 +1,42 @@
+mixin burger
+  .burger
+    .burger__wrapper
+      .burger__cabinet.cabinet-burger
+        .cabinet-burger__wrapper
+          svg.cabinet-burger__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Student")
+          .cabinet-burger__info
+            p Алексей
+            p Перейти в профиль
+        svg.cabinet-burger__arrow
+          use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .burger__city
+        p Изменить
+      .burger__menu
+      .burger__contacts.contacts-burger
+        .contacts-burger__mail.mail-burger
+          svg.mail-burger__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Envelope")
+          .mail-burger__desc
+            a(href='mailto:proverili@info.ru') proverili@info.ru
+            p Пишите, если есть вопросы
+        .contacts-burger__phone.phone-burger
+          svg.phone-burger__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Phone")
+          .phone-burger__desc
+            a(href='tel:+78005654423') +7 800 565 44 23
+            p Звоните, если нужна помощь
+      .burger__social.social-burger
+        .social-burger__icons
+          svg.social-burger__vk
+            use(xlink:href="img/sprite/icons.svg#svg-vk")
+          svg.social-burger__facebook
+            use(xlink:href="img/sprite/icons.svg#svg-facebook")
+        .social-burger__policy.policy-burger
+          a(href='#').policy-burger__data Обработка персональных данных
+          a(href='#').policy-burger__agreement Пользовательское соглашение
+      .burger__logOut
+        p Выйти
+        svg
+          use(xlink:href="img/sprite/icons.svg#svg-SignOut")
+      .burger__login

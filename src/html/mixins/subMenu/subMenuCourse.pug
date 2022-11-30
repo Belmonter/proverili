@@ -1,0 +1,17 @@
+mixin subMenuCourse
+  .subMenu.menu-course(data-submenu='item-course')
+    .subMenu__prevTitle.sub(data-back='item-course')
+      svg
+        use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      p Высшее
+    .subMenu__wrapper
+      .submenu__items.items-high
+        .scroll-wrapper
+          for item in courseMenu
+            div(class= item['class'] + ' items-high__item')
+              p= item['text']
+              .arrow
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              .item__submenu.submenu-item
+                +subSubMenu(item['submenuTitle'], item['centerMenuLeft'], item['centerMenuRight'], item['rightMenu'])

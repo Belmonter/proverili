@@ -1,0 +1,66 @@
+@use "sass:math";
+
+.sort-popup {
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  transform: translate(0, 100%) scale(0);
+  width: 248px;
+  padding: 16px;
+  background-color: $white;
+  box-shadow: 0 0 40px rgba(58, 58, 58, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease 0s;
+  z-index: 2;
+  @media (max-width: 940px) {
+    position: static;
+    width: 100%;
+    transform: unset;
+    border-radius: 0;
+  }
+  &.active {
+    transform: translate(0, 100%) scale(1);
+  }
+  &__btn {
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    &.active {
+      box-shadow: 0 0 0 1px $mainColor;
+      background-color: $white;
+    }
+    input {
+      cursor: pointer;
+      appearance: none;
+      position: absolute;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1 0 auto;
+      line-height: math.div(20, 16);
+      &::after {
+        cursor: pointer;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: inherit;
+        border: 1px solid $grey1;
+        border-radius: 50%;
+      }
+    }
+    input:checked + label:after {
+      background-color: $mainColor;
+      background-image: url("@img/icons/check.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 14px 14px;
+    }
+  }
+}

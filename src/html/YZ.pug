@@ -1,0 +1,105 @@
+include mixins/yzItem/yzItem
+include mixins/yzQiuz/yzQuiz
+include mixins/yzNoResults/yzNoResults
+.yz
+  .yz__container
+    .yz__head.head-yz
+      .head-yz__total Найдено #[span 156] вузов
+      .head-yz__filter.filter-yz
+        .filter-yz__text По цене
+        svg.filter-yz__icon
+          use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .sort-popup(data-da=".mobileSort__wrapper, 940")
+          .sort-popup__radios
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_1" value="price:desc" name="sort" checked)
+              label(for="sort_1") По цене
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_2" value="popular" name="sort")
+              label(for="sort_2") Популярные
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_3" value="price:asc" name="sort")
+              label(for="sort_3") Подешевле
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_4" value="rating" name="sort")
+              label(for="sort_4") Высокий рейтинг
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_5" value="bal" name="sort")
+              label(for="sort_5") Низкий проходной
+            .sort-popup__btn
+              input(type="radio" autocomplete="off" id="sort_6" value="reviews" name="sort")
+              label(for="sort_6") Много отзывов
+  .yz__wrapper
+    .preloader.yz(id="preloader-yz").hide
+      img(src="img/icons/Preloader.svg" alt="preloader")
+    .yz__container(id="first")
+      +yzItem(true, "yzItem green", false)
+      +yzItem(true, "yzItem green", false)
+      +yzItem(true, "yzItem green", false)
+      //+yzNoResults
+    +yzQuiz
+    .yz__container(id="last")
+      +yzItem(false, "yzItem", true)
+      +yzItem(false, "yzItem", false)
+      +yzItem(false, "yzItem", false)
+    .yz__show(data-goto-header data-goto=".filters__container") Показать еще #[span (45)]
+    .yz__container
+      .yz__about.about-yz
+        .about-yz__desc.
+          Выбираете высшее учебное заведение с минимальными проходными баллами ЕГЭ для обучения в Санкт-Петербурге? Наш каталог
+          предлагает большой выбор вузов с бюджетными местами, где вы можете получить диплом государственного образца.
+          В списке представлены бюджетные вузы Санкт-Петербурга с низкими проходными баллами, которые дают качественное образование,
+          используя современные технологии  в обучении. Ознакомьтесь с перечнем, выберите интересующее вас учебное заведение. Кликнув на название,
+          вы увидите: стоимость обучения, проходные баллы и бюджетные места.
+        .about-yz__education.education-yz-about
+          .education-yz-about__title Обучение программированию на языке Python
+          .education-yz-about__desc
+            p.
+              Для создания любых программ, которыми мы пользуемся каждый день, нужны опытные разработчики. Они используют
+              разные языки для программирования, самым популярным из которых является Python. Его используют успешные разработчики для любых сценариев.
+              Научиться программированию с Python необходимый и полезный навык. Этот язык программирования используется в самых разных областях:
+            ul
+              li В разработке javascript
+              li Сбора данных
+              li Нейросетях
+              li Время тестирования ПО
+              li Других областях
+            p.
+              Для создания любых программ, которыми мы пользуемся каждый день, нужны опытные разработчики. Они используют
+              разные языки для программирования, самым популярным из которых является Python. Его используют успешные разработчики для любых сценариев.
+              Научиться программированию с Python необходимый и полезный навык. Этот язык программирования используется в самых разных областях:
+            ul
+              li В разработке javascript
+              li Сбора данных
+              li Нейросетях
+              li Время тестирования ПО
+              li Других областях
+          .education-yz-about__more
+            p Показать еще
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .about-yz__popular.popular-yz-about
+          .popular-yz-about__title Популярные
+          .popular-yz-about__wrapper
+            a(href="#" title="Backend-разработка на Python").popular-yz-about__item Backend-разработка на Python
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python для анализа данных").popular-yz-about__item Python для анализа данных
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+            a(href="#" title="Backend-разработка на Python").popular-yz-about__item Backend-разработка на Python
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python-фреймворк Django").popular-yz-about__item Python-фреймворк Django
+            a(href="#" title="Python для анализа данных").popular-yz-about__item Python для анализа данных
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+            a(href="#" title="Автоматизация тестирования на Python").popular-yz-about__item Автоматизация тестирования на Python
+          .popular-yz-about__more
+            p Показать еще
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+
+

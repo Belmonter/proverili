@@ -1,0 +1,22 @@
+mixin citySearch
+  .city-menu__container.rel
+    .header__city-menu.city-menu
+      .city-menu__search
+        input(name="city-search" placeholder="Начните вводить название, а мы подскажем")
+        svg.city-menu__icon-search
+          use(xlink:href="img/sprite/icons.svg#svg-Search")
+        svg.city-menu__icon-clear
+          use(xlink:href="img/sprite/icons.svg#svg-search_close")
+        svg.city-menu__arrow
+          use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      .city-menu__wrapper
+      .city-menu__search-wrapper
+    .header-geo.geo-header(data-da=".mobileChoseCity__wrapper, 768")
+      .geo-header__title Ваш город
+      .geo-header__city.city-geo
+        svg.city-geo__icon
+          use(xlink:href="img/sprite/icons.svg#svg-LocationGrey")
+        .city-geo__name
+      .geo-header__btns.btns-geo
+        .btns-geo__true Да, верно
+        .btns-geo__false Нет, изменить

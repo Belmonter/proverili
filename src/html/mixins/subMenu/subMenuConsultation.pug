@@ -1,0 +1,32 @@
+mixin subMenuConsultation
+  .subMenu.consultation.menu-consultation(data-submenu='item-consultation')
+    .subMenu__prevTitle.sub(data-back='item-consultation')
+      svg
+        use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      p Высшее
+    .subMenu__wrapper.consultation__wrapper
+      .consultation__help.help-consultation
+        .help-consultation__title Поможем с поиском
+        .help-consultation__desc Звоните, если нужна помощь. В рабочие дни с 9:00 до 21:00
+        .help-consultation__phone
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-Phone")
+          a(href='tel:+78005654423') +7 800 565 44 23
+      .consultation__right
+        .consultation__form.form-consultation
+          form.form-consultation__send
+            .form-consultation__title Оставьте номер телефона
+            .form-consultation__desc Наш менеджер свяжется с вами в ближайшее время
+            .form-consultation__input
+              input(type='tel' autocomplete="off" name='phone' data-tel-input maxlength='18')
+            button.form-consultation__btn(type='submit') Перезвоните мне
+          .form-consultation__thanks.thanks-form-consultation
+            .thanks-form-consultation__icon.-ibg_contain
+              img(src="img/icons/thanksCheck.svg" alt="check icon")
+            .thanks-form-consultation__title Заявка принята
+            .thanks-form-consultation__subtitle Наш менеджер свяжется с вами в ближайшее время
+        .consultation__quiz.quiz-consultation(data-goto-header data-goto=".yzQuiz")
+          .quiz-consultation__title Подберем вуз мечты за 30 секунд
+          .quiz-consultation__desc Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов
+          .quiz-consultation__img.-ibg_contain
+            img(src="img/icons/quiz.svg" alt="quiz icon")

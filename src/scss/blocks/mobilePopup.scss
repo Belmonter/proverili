@@ -1,0 +1,58 @@
+@use 'sass:math';
+
+.mobile-popup {
+  position: fixed;
+  bottom: -100%;
+  width: 100%;
+  padding: 16px 0;
+  max-height: 100%;
+  background-color: $white;
+  border-radius: 16px 16px 0 0;
+  z-index: 101;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+  &.active {
+    bottom: -24px;
+    visibility: visible;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      padding: 16px 0;
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba($mainColor, 0.1);
+      border-radius: 20px;
+    }
+  }
+}
+.head-mobilePopup {
+  border-bottom: 1px solid rgba($mainColor, 0.1);
+  &__wrapper {
+    padding: 0 16px 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    max-width: 206px;
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: math.div(24, 18);
+  }
+  &__close {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+}
+.footer-filterPopup {
+  margin-top: 16px;
+  &__wrapper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+  }
+}

@@ -1,0 +1,30 @@
+mixin subSubMenu(title, centerMenuItemsLeft, centerMenuItemsRight, rightMenu)
+  .subMenu__prevTitle(data-subBack).prevTitle-subMenu
+    .prevTitle-subMenu__wrapper
+      svg
+        use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      p *****
+    a(href="#").prevTitle-subMenu__all Смотреть все
+  .submenu-item__wrapper
+    .submenu-high__popular.popular-menu
+      .popular-menu__title.submenu-title Популярные подборки
+      .popular-menu__wrapper
+        .popular-menu__left.left-popular
+          for item in centerMenuItemsLeft
+            a(href= item['link']).left-popular__item= item['text']
+        .popular-menu__right.right-popular
+          for item in centerMenuItemsRight
+            a(href= item['link']).right-popular__item= item['text']
+    .submenu-high__top.top-menu
+      .top-menu__title.submenu-title #{title}
+      .top-menu__wrapper
+        for item in rightMenu
+          .top-menu__item.item-top
+            .item-top__icon.-ibg_contain
+              img(src=item['image'] alt="university logo")
+            .item-top__desc
+              p=item['text']
+        .top-menu__quiz.quiz-top(data-goto-header data-goto=".yzQuiz")
+          .quiz-top__text Подберем вуз мечты за 30 секунд
+          .quiz-top__logo.-ibg_contain
+            img(src="img/icons/quiz.svg" alt="quiz icon")

@@ -1,0 +1,55 @@
+@use 'sass:math';
+
+.tabs {
+  margin-top: -138px;
+  @media (max-width: 940px) {
+    width: 100%;
+  }
+  @media (max-width: 391px) {
+    margin-top: -105px;
+  }
+  // .tabs__navigation
+  &__navigation {
+    display: flex;
+  }
+  // .tabs__title
+  &__title {
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 16px 16px 0 0;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+    background-color: inherit;
+    line-height: math.div(20, 16);
+    &.tip::after {
+      content: 'Бесплатно за 30 сек';
+      position: absolute;
+      top: 0;
+      right: -10px;
+      transform: translate(0, -50%);
+      padding: 4px 8px;
+      background-color: $white;
+      border-radius: 34px;
+      font-size: rem(12);
+      line-height: math.div(12, 12);
+    }
+    &._tab-active {
+      background-color: $white;
+      border: unset;
+      &.tip::after {
+        display: none;
+      }
+    }
+  }
+  // .tabs__content
+  &__content {
+    padding: 24px;
+    //@include adaptiveValue("padding", 48, 24, 1216, 670, 1);
+    background-color: $white;
+    border-radius: 0 24px 24px 24px;
+  }
+  // .tabs__body
+  &__body {
+  }
+}

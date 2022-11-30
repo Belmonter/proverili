@@ -1,0 +1,77 @@
+include mixins/subMenu/subMenuHigh
+include mixins/subMenu/subMenuMiddle
+include mixins/subMenu/subMenuCourse
+include mixins/subMenu/subMenuConsultation
+include mixins/burger/burger
+include mixins/menuSearch/menuSearch
+include mixins/citySearch/citySearch
+
+
+
+header.header
+  +burger
+  .header__container
+    .header__wrapper
+      .header__left
+        button.menu__icon.icon-menu(type="button")
+          span
+        a.header__logo.-ibg_contain(href='#')
+          img(src="img/icons/Logo.svg" alt="logo")
+        .header__menu.menu(data-da=".burger__menu, 900")
+          nav.menu__body
+            ul.menu__list
+              li.menu__item.underline-one(data-menu='item-high')
+                .menu__link Высшее
+                .menu__arrow
+                  svg
+                    use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              li.menu__item.underline-one(data-menu='item-middle')
+                .menu__link Среднее
+                .menu__arrow
+                  svg
+                    use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              li.menu__item.underline-one(data-menu='item-course')
+                .menu__link Курсы
+                .menu__arrow
+                  svg
+                    use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              li.menu__item.underline-one(data-menu='item-consultation')
+                svg.consultation-icon
+                  use(xlink:href="img/sprite/icons.svg#svg-ChatGreen")
+                a.menu__link.brigt-green(href="#") Консультация
+                .menu__arrow
+                  svg
+                    use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .header__right.right-header
+        .right-header__city.city-header(data-da=".burger__city, 630, first")
+          .city-header__icon
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-LocationGrey")
+          .city-header__city Любой регион
+        .right-header__search.search-header
+          .search-header__consultation
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-ChatGreen")
+          svg.search-header__search
+            use(xlink:href="img/sprite/icons.svg#svg-Search")
+            .search-header__heart
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-heart")
+              .search-header__counter 35
+        .right-header__login.login-header(data-da=".burger__login, 460")
+          .login-header__btn(data-popup="#popup-login") Войти
+          .login-header__logged
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-Student")
+            p Алексей
+
+  +citySearch
+  +menuSearch
+  +subMenuHigh
+  +subMenuMiddle
+  +subMenuCourse
+  +subMenuConsultation
+
+
+
+

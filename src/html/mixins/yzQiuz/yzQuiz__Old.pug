@@ -1,0 +1,230 @@
+mixin yzQuiz
+  .yzQuiz__wrapper
+    .yzQuiz
+      .yzQuiz__about
+        .yzQuiz__title Подберём вуз мечты
+        .yzQuiz__desc Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов
+        .yzQuiz__img
+          img(src="img/icons/quiz-item.svg" alt="quiz icon")
+      +quiz('quiz-content_')
+      form.yzQuiz__form.form-yzQuiz
+        .form-yzQuiz__stepOne.stepOne.active
+          .form-yzQuiz__head
+            .form-yzQuiz__title Для кого вы ищете учебное заведение?
+            .form-yzQuiz__step Шаг 1/9
+          .yzQuiz__radioBtns.step__radioBtns
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_1" name="forWhom" value="1" checked)
+              label(for="yzQuiz-1_1") Себе
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_2" name="forWhom" value="2")
+              label(for="yzQuiz-1_2") Супругу/супруге
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_3" name="forWhom" value="3")
+              label(for="yzQuiz-1_3") Родственнику
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_4" name="forWhom" value="4")
+              label(for="yzQuiz-1_4") Коллеге
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_5" name="forWhom" value="5")
+              label(for="yzQuiz-1_5") Ребенку
+            .yzQuizFirstStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-1_6" name="forWhom" value="6")
+              label(for="yzQuiz-1_6") Другое
+          .yzQuizOne__next.step__next
+            p Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepTwo.stepTwo
+          .form-yzQuiz__head
+            .form-yzQuiz__title В каком городе планируете поступать?
+            .form-yzQuiz__step Шаг 2/9
+          .form-yzQuiz__wrapper.step-select-wrapper
+            .form-yzQuiz__select.step__select(data-select data-search id="QuizItem-city" data-label="Город" input-placeholder="Любой" data-ajax
+            data-method="cities")
+              select(name="cities[]" multiple)
+                option(value="1")
+            .form-yzQuiz__navigation.step__navigation
+              .yzQuizTwo__back.step__back
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+                p Назад
+              .yzQuizTwo__next.step__next
+                p Далее
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepThree.stepThree
+          .form-yzQuiz__head
+            .form-yzQuiz__title Какое образование уже есть?
+            .form-yzQuiz__step Шаг 3/9
+          .yzQuiz__radioBtns.step__radioBtns.active
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_1" name="class" value="1" checked)
+              label(for="yzQuiz-3_1") 9 классов
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_2" name="class" value="2")
+              label(for="yzQuiz-3_2") Колледж/техникум
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_3" name="class" value="3")
+              label(for="yzQuiz-3_3") 11 классов
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_4" name="class" value="4")
+              label(for="yzQuiz-3_4") 11 классов
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_5" name="class" value="5")
+              label(for="yzQuiz-3_5") Училище
+            .yzQuizThirdStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-3_6" name="class" value="6")
+              label(for="yzQuiz-3_6") Неоконченное высшее
+          .form-yzQuiz__navigation.step__navigation
+            .yzQuizThree__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .yzQuizThree__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepFour.stepFour
+          .form-yzQuiz__head
+            .form-yzQuiz__title Куда планируете поступать?
+            .form-yzQuiz__step Шаг 4/9
+          .yzQuiz__radioBtns.step__radioBtns.yz-column
+            .yzQuizFourthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-4_1" name="where" value="1" checked)
+              label(for="yzQuiz-4_1") Вуз
+            .yzQuizFourthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-4_2" name="where" value="2")
+              label(for="yzQuiz-4_2") Колледж/техникум
+            .yzQuizFourthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-4_3" name="where" value="3")
+              label(for="yzQuiz-4_3") Училище
+          .yzQuiz__navigation.step__navigation
+            .yzQuizFour__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .yzQuizFour__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepFive.stepFive
+          .form-yzQuiz__head
+            .form-yzQuiz__title Какую форму обучения предпочитаете?
+            .form-yzQuiz__step Шаг 5/9
+          .form-yzQuiz__radioBtns.step__radioBtns.yz-column
+            .yzQuizFifthStepRadio__btn.step__radioBtn.active
+              input(type="radio" autocomplete="off" id="yzQuiz-5_1" name="form" value="1" checked)
+              label(for="yzQuiz-5_1") Очную
+            .yzQuizFifthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-5_2" name="form" value="2")
+              label(for="yzQuiz-5_2") Заочную
+            .yzQuizFifthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-5_3" name="form" value="3")
+              label(for="yzQuiz-5_3") Дистанционную
+          .form-yzQuiz__navigation.step__navigation
+            .yzQuizFive__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .yzQuizFive__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepSix.stepSix
+          .form-yzQuiz__head
+            .form-yzQuiz__title Рассматриваете платное обучение?
+            .form-yzQuiz__step Шаг 6/9
+          .form-yzQuiz__radioBtns.step__radioBtns.yz-column
+            .yzQuizSixStepRadio__btn.step__radioBtn.active
+              input(type="radio" autocomplete="off" id="yzQuiz-6_1" name="pay" value="1" checked)
+              label(for="yzQuiz-6_1") Нет, только бюджет
+            .yzQuizSixStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-6_2" name="pay" value="2")
+              label(for="yzQuiz-6_2") Да, планирую учиться платно
+            .yzQuizSixStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-6_3" name="pay" value="3")
+              label(for="yzQuiz-6_3") Возможны оба варианта
+          .form-yzQuiz__navigation.step__navigation
+            .yzQuizSix__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .yzQuizSix__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepSeven.stepSeven
+          .form-yzQuiz__head
+            .form-yzQuiz__title Рассматриваете платное обучение?
+            .form-yzQuiz__step Шаг 7/9
+          .form-yzQuiz__wrapper.step-select-wrapper
+            .form-yzQuiz__select.step__select(data-select data-search id="QuizItem-specialization" data-label="Специальность" input-placeholder="Любая"
+              data-ajax
+              data-method="directions")
+              select(name="specialities[]" multiple)
+                option(value="1")
+            .form-yzQuiz__navigation.step__navigation
+              .yzQuizSeven__back.step__back
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+                p Назад
+              .yzQuizSeven__next.step__next
+                p Далее
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .form-yzQuiz__stepEight.stepEight
+          .form-yzQuiz__head
+            .form-yzQuiz__title Как скоро планируете поступать?
+            .form-yzQuiz__step Шаг 8/9
+          .yzQuiz__radioBtns.step__radioBtns
+            .yzQuizEighthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-9_1" name="exist_education" value="1" checked)
+              label(for="yzQuiz-9_1") Как можно быстрее
+            .yzQuizEighthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-9_2" name="exist_education" value="2")
+              label(for="yzQuiz-9_2") Месяц
+            .yzQuizEighthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-9_3" name="exist_education" value="3")
+              label(for="yzQuiz-9_3") Квартал
+            .yzQuizEighthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-9_4" name="exist_education" value="4")
+              label(for="yzQuiz-9_4") Полгода
+            .yzQuizEighthStepRadio__btn.step__radioBtn
+              input(type="radio" autocomplete="off" id="yzQuiz-9_5" name="exist_education" value="5")
+              label(for="yzQuiz-9_5") Год
+          .form-yzQuiz__navigation.step__navigation
+            .yzQuizEight__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .yzQuizEight__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+          .form-yzQuiz__thanks.thanks-yzQuiz
+            svg.thanks-yzQuiz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-thanksCheck")
+            .thanks-yzQuiz__title Отлично, спасибо!
+            .thanks-yzQuiz__subtitle Мы отправили подборку вам на почту. Если подборка не приходит — проверьте спам, возможно, она попала туда.
+        .form-yzQuiz__stepNine.stepNine
+          .form-yzQuiz__head
+            .form-yzQuiz__title Ваша подборка готова! 🥳 Куда нам отправить её?
+            .form-yzQuiz__step Шаг 9/9
+          .form-yzQuiz__info.step-info
+            .step-info__input
+              input(type="text" autocomplete="off" id="pageQuiz-name" name="name" placeholder="Как вас зовут?")
+              p Поле не должно быть пустым
+            .step-info__input
+              input(type="tel" autocomplete="off" id="pageQuiz-phone" data-tel-input max-length="18" name="phone" placeholder="Номер телефона")
+              p Поле не должно быть пустым
+            .step-info__input
+              input(type="text" autocomplete="off" id="pageQuiz-email" name="email" placeholder="E-mail")
+              p Поле не должно быть пустым
+            button.step__btn(type="submit") Получить подборку
+          .step__personal Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+        .form-yzQuiz__final.final-tabs-pick
+          .final-tabs-pick__icon.-ibg_contain
+            img(src="img/icons/thanksCheck.svg" alt="check icon")
+          .final-tabs-pick__title Отлично, спасибо!
+          .final-tabs-pick__desc Мы отправили подборку вам на почту. Если подборка не приходит — проверьте спам, возможно, она попала туда.

@@ -1,0 +1,20 @@
+mixin subMenuMiddle
+  .subMenu.menu-middle(data-submenu='item-middle')
+    .subMenu__prevTitle.sub(data-back='item-middle')
+      svg
+        use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      p Высшее
+    .subMenu__wrapper
+      .submenu__items.items-high
+        .scroll-wrapper
+          for item in middleMenu
+            div(class= item['class'] + ' items-high__item')
+              if item['new']
+                p(class='new')= item['text']
+              else
+                p= item['text']
+              .arrow
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              .item__submenu.submenu-item
+                +subSubMenu(item['submenuTitle'], item['centerMenuLeft'], item['centerMenuRight'], item['rightMenu'])

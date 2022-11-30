@@ -1,0 +1,64 @@
+@use 'sass:math';
+
+
+.tags {
+  margin-top: 16px;
+  &__slide {
+    cursor: pointer;
+    width: fit-content;
+    padding: 6px 8px;
+    border: 1px solid #D8D8D8;
+    border-radius: 100px;
+    font-size: rem(14);
+    line-height: math.div(20, 14);
+    color: $grey3;
+    white-space: nowrap;
+  }
+  &__slider {
+    position: relative;
+    border-radius: 50px;
+  }
+}
+.tags-button-prev {
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  background-color: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+  &.swiper-button-disabled {
+    display: none;
+  }
+}
+.tags-button-next {
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background-color: $white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+  &.swiper-button-disabled {
+    display: none;
+  }
+}
+

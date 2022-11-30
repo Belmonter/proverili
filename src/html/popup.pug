@@ -1,0 +1,174 @@
+.popup(id="popup-login" aria-hidden="true")
+  .popup__wrapper
+    .popup__content
+      svg.popup__close(data-close type="button")
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+      .popup__title Войти
+      form.popup__form.form-popup(id="login-form" data-da=".mobileLogin__wrapper, 900, first")
+        .form-popup__input
+          input(id="login-email" autocomplete="off" name="email" placeholder="Почта")
+          p Поле не должно быть пустым
+        .form-popup__input
+          input(id="login-password" type="password" name="password" placeholder="Пароль")
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-Eye")
+          p Поле не должно быть пустым
+        a(href="#").form-popup__forgot Не помню пароль
+        button.form-popup__btn(type="submit") Войти
+        .form-popup__privacy Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+        .form-popup__question
+          hr
+          p Еще нет аккаунта?
+          hr
+        .form-popup__register(id="register-btn") Зарегистрироваться
+
+.popup(id="popup-score" aria-hidden="true")
+  .popup__wrapper
+    .popup__content
+      svg.popup__close(data-close type="button")
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+      .popup__title Чтобы посмотреть эти данные, нужно войти или зарегистрироваться
+      form.popup__form.form-popup
+        .form-popup__input
+          input(name="email" autocomplete="off" placeholder="Почта")
+        .form-popup__input
+          input(name="password" autocomplete="off" placeholder="Пароль")
+        button.form-popup__btn(type="submit") Войти
+        .form-popup__privacy Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+        .form-popup__question
+          hr
+          p Еще нет аккаунта?
+          hr
+        .form-popup__register Зарегистрироваться
+
+.popup(id="popup-registration" aria-hidden="true")
+  .popup__wrapper
+    .popup__content
+      svg.popup__close(data-close type="button")
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+      .popup__title Регистрация
+      form.popup__form.form-popup(id="registration-form" data-da=".mobileRegistration__wrapper, 900")
+        .form-popup__input
+          input(id="registration-name" autocomplete="off" name="name" placeholder="ФИО")
+          p Поле не должно быть пустым
+        .form-popup__input
+          input(id="registration-email" autocomplete="off" name="email" placeholder="Email")
+          p Поле не должно быть пустым
+        .form-popup__input
+          input(id="registration-phone" autocomplete="off" name="phone" data-tel-input max-length="18")
+          p Поле не должно быть пустым
+        .form-popup__input
+          input(id="registration-password" autocomplete="off" type="password" name="password" placeholder="Пароль")
+          p Поле не должно быть пустым
+        .form-popup__input
+          input(id="registration-repeat-password" autocomplete="off" type="password" name="repeat-password" placeholder="Повторите пароль")
+          p Поле не должно быть пустым
+          p.password Пароли должны совпадать
+        .form-popup__select(data-select data-search id="reg-city" input-placeholder="Город" data-ajax
+        data-method="cities")
+          select
+            option(value="1")
+        .form-popup__select(data-select id="reg-forWhom" input-placeholder="Для кого вы ищете учебное заведение?")
+          select
+            option(value="1") Себе
+            option(value="2") Супруге
+            option(value="3") Брату
+            option(value="4") Свату
+        .form-popup__select(data-select id="reg-where" input-placeholder="Куда планируете поступать?")
+          select
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+        .form-popup__select(data-select id="reg-form" input-placeholder="Какую форму обучения предпочитаете?")
+          select
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+        .form-popup__select(data-select id="reg-plans" input-placeholder="Планируете учиться платно?")
+          select
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+        .form-popup__select(data-select id="reg-specialisation" input-placeholder="Определились со специальностью?")
+          select
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+        .form-popup__select(data-select id="reg-choose" input-placeholder="Выберите специальность")
+          select
+            option(value="1") 1
+            option(value="2") 2
+            option(value="3") 3
+            option(value="4") 4
+        button.form-popup__btn(type="submit") Зарегистрироваться
+        .form-popup__privacy Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+
+.popup(id="popup-count" aria-hidden="true")
+  .popup__wrapper
+    .popup__content
+      svg.popup__close(data-close type="button")
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+      .popup__title Введите баллы по ЕГЭ в простую форму
+      form.popup__form.form-popup(data-da=".mobileCounter__wrapper, 900")
+        .form-popup__wrapper
+          .form-popup__count.count-form
+            .count-form__select(data-select id="count-1")
+              select
+                option(value="6" selected data-placeholder) Математика
+            .count-form__counter
+              input(name="counter-number-1" autocomplete="off" placeholder="Балл")
+        .form-popup__add
+          p Добавить предмет
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-Plus")
+        .form-popup__send Войти
+
+form.filter-popup(id="popup-filter").mobile-popup
+  .head-mobilePopup
+    .head-mobilePopup__wrapper
+      .head-mobilePopup__title Фильтры
+      svg.head-mobilePopup__close.head-filterPopup__close
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+  .filter-popup__selects
+  .filter-popup__footer.footer-filterPopup
+    .footer-filterPopup__wrapper
+
+.mobileSort-popup(id="popup-mobileSort").mobile-popup
+  .head-mobilePopup
+    .head-mobilePopup__wrapper
+      .head-mobilePopup__title Сортировать
+      svg.head-mobilePopup__close
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+  .mobileSort__wrapper
+
+.mobileCounter-popup(id="popup-mobileCounter").mobile-popup
+  .head-mobilePopup
+    .head-mobilePopup__wrapper
+      .head-mobilePopup__title Введите баллы по ЕГЭ в простую форму
+      svg.head-mobilePopup__close
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+  .mobileCounter__wrapper
+
+.mobileLogin-popup(id="popup-mobileLogin").mobile-popup
+  .head-mobilePopup
+    .head-mobilePopup__wrapper
+      .head-mobilePopup__title Войти
+      svg.head-mobilePopup__close
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+  .mobileLogin__wrapper
+
+.mobileRegistration-popup(id="popup-mobileRegistration").mobile-popup
+  .head-mobilePopup
+    .head-mobilePopup__wrapper
+      .head-mobilePopup__title Регистрация
+      svg.head-mobilePopup__close
+        use(xlink:href="img/sprite/icons.svg#svg-Close")
+  .mobileRegistration__wrapper
+
+.mobileChoseCity-popup(id="popup-mobileChoseCity").mobile-popup
+  .mobileChoseCity__wrapper
+

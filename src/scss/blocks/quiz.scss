@@ -1,0 +1,362 @@
+@use 'sass:math';
+
+@mixin quizBtn {
+  cursor: pointer;
+  width: 108px;
+  height: 44px;
+  padding: 12px 20px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  background-color: $mainColor;
+  border-radius: 12px;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+  color: $white;
+  transition: opacity 0.3s;
+  svg {
+    width: 16px;
+    height: 16px;
+    transform: rotate(-90deg);
+    fill: $white;
+  }
+}
+@mixin visibleStep {
+  opacity: 0;
+  height: 0;
+  transform: scale(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.5s ease 0s;
+  &.active {
+    height: 100%;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.quiz-container {
+  padding: 24px;
+  @include adaptiveValue("padding", 24, 0);
+}
+.quiz-form {
+  .step__select {
+    margin: 40px auto 0;
+    @include adaptiveValue("margin-top", 40, 16);
+    @include adaptiveValue("width", 590, 296);
+  }
+}
+.quiz-form__step {
+  opacity: 0;
+  height: 0;
+  transform: scale(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease 0s;
+
+  &.active {
+    opacity: 1;
+    height: 100%;
+    transform: scale(1);
+  }
+
+  &-number {
+    text-align: center;
+    line-height: math.div(20, 16);
+    @include adaptiveValue("font-size", 16, 12);
+    color: $grey3;
+  }
+
+  &-title {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+    @include adaptiveValue("font-size", 32, 16, 768, 360, 1);
+    line-height: math.div(36, 32);
+  }
+
+  &-subtitle {
+    text-align: center;
+    margin-top: 8px;
+    line-height: math.div(20, 16);
+    @include adaptiveValue("font-size", 16, 14);
+    color: rgba($mainColor, 0.5);
+  }
+
+  &-btn {
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    background-color: $mainColor;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: math.div(20, 16);
+    color: $white;
+    @media (max-width: 551px) {
+      width: 100%;
+    }
+  }
+
+  &-personal {
+    @include adaptiveValue("margin-top", 32, 8);
+    text-align: center;
+    font-size: rem(12);
+    line-height: math.div(20, 12);
+    color: $grey3;
+    a {
+      color: $mainColor;
+      text-decoration: underline;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    @include adaptiveValue("margin-top", 40, 16);
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    @media (max-width: 960px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 8px;
+    }
+    &_input {
+      width: 100%;
+      input {
+        width: 100%;
+        height: 56px;
+        background: $inputBackground;
+        border-radius: 16px;
+        padding: 18px 16px;
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div(20, 16);
+        outline: none;
+        &::placeholder {
+          color: $grey3;
+        }
+        &:hover {
+          box-shadow: 0 0 0 1px rgba($grey3, 0.3);
+        }
+        &:focus {
+          background-color: $white;
+          box-shadow: 0 0 0 1px rgba($mainColor, 1);
+        }
+        @media (max-width: 551px) {
+          width: 100%;
+        }
+      }
+      p {
+        display: none;
+        margin-top: 8px;
+        font-size: rem(12);
+        line-height: math.div(12, 12);
+        color: #FF0000;
+      }
+      &.error {
+        input {
+          background: rgba(255, 0, 0, 0.08);
+          border: 1px solid #FF0000;
+        }
+        p {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-radios {
+    @include adaptiveValue("margin-top", 40, 16);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 292px);
+    gap: 8px;
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    }
+    &.column {
+      grid-template-columns: 592px;
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+  }
+
+  &-next {
+    @include quizBtn;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+
+  &-back {
+    @include quizBtn;
+    background-color: $white;
+    border: 1px solid $grey1;
+    color: $mainColor;
+    svg {
+      transform: rotate(90deg);
+      fill: $mainColor;
+    }
+  }
+
+  &-radio {
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked + .quiz-form__step-radio_content {
+
+        box-shadow: 0 0 0 1px $mainColor;
+        background-color: $white;
+
+        &:after {
+          background-color: $mainColor;
+          background-image: url("@img/icons/check.svg");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 14px 14px;
+        }
+      }
+    }
+
+    &_content {
+
+      cursor: pointer;
+      width: 100%;
+      padding: 0 16px;
+      background-color: $inputBackground;
+      border-radius: 16px;
+      transition: all 0.3s ease 0s;
+      height: 56px;
+      display: flex;
+      align-items: center;
+
+      justify-content: space-between;
+
+      &:after {
+        cursor: pointer;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: inherit;
+        border: 1px solid $grey1;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &-navigation {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    .quiz-form__step-next, .quiz-form__step-back {
+      margin: 0 0 0 0;
+    }
+    @media (max-width: 670px) {
+      margin-top: 34px;
+    }
+  }
+
+  &-final {
+    @include visibleStep;
+    align-items: center;
+    &_icon {
+      width: 72px;
+      height: 72px;
+      margin-top: 50px;
+    }
+    &_title {
+      margin-top: 32px;
+      font-weight: 500;
+      font-size: rem(32);
+      line-height: math.div(36, 32);
+    }
+    &_desc {
+      text-align: center;
+      max-width: 492px;
+      margin-top: 8px;
+      line-height: math.div(20, 16);
+      color: $grey3;
+      margin-bottom: 50px;
+    }
+  }
+}
+.tabs__content .quiz-container {
+  //padding: 24px 0;
+}
+
+.yzQuiz {
+  .quiz-container {
+    padding: 32px;
+    @include adaptiveValue("width", 576, 328, 690, 360, 1);
+    box-sizing: border-box;
+    background: $white;
+    border-radius: 24px;
+    @media (max-width: 970px) {
+      margin: 24px auto 0 auto;
+    }
+    @media (max-width: 690px) {
+      padding: 24px 16px 24px 16px;
+    }
+    .quiz-form__step {
+      &-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        @media (max-width: 490px) {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          row-gap: 4px;
+        }
+      }
+
+      &-title {
+        font-weight: 500;
+        line-height: math.div(20, 16);
+        text-align: left;
+        margin: 0;
+        font-size: rem(16);
+      }
+      &-radios {
+        grid-template-columns: 255px 255px;
+        @media (max-width: 700px) {
+          grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+        }
+      }
+      .step__select {
+        @include adaptiveValue("width", 512, 296, 970, 360, 1);
+      }
+      &-info {
+        flex-wrap: wrap;
+
+        &_input {
+          margin-bottom: 8px;
+        }
+      }
+    }
+    &__wrapper {
+      height: 94%;
+    }
+    &__info {
+      flex-direction: column;
+      row-gap: 8px;
+      input {
+        width: 100%;
+      }
+      .step__btn {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "prettier"
+  ],
+  "env": {
+    "es6": true
+  },
+  "parser": "@babel/eslint-parser",
+  "plugins": [
+    "prettier",
+    "pug"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "requireConfigFile": false
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-useless-concat": "warn",
+    "prefer-const": "warn",
+    "prettier/prettier": [
+      "warn",
+      {},
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "no-console": "warn"
+  }
+}

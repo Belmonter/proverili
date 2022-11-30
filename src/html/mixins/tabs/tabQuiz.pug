@@ -1,0 +1,212 @@
+mixin tabQuiz
+  .tabs-pick
+    form.tabs-pick__form
+      .tabs-pick__stepOne.stepOne.active
+        .stepOne-pick__number.step__number Шаг 1/9
+        .stepOne-pick__title.step__title Для кого вы ищете учебное заведение?
+        .stepOne-pick__radioBtns.step__radioBtns
+          .firstStepRadio__btn.step__radioBtn.active
+            input(type="radio" autocomplete="off" id="tabQuiz-1_1" name="forWhom" checked)
+            label(for="tabQuiz-1_1") Себе
+          .firstStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-1_2" name="forWhom")
+            label(for="tabQuiz-1_2") Супругу/супруге
+          .firstStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-1_3" name="forWhom")
+            label(for="tabQuiz-1_3") Родственнику
+          .firstStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-1_4" name="forWhom")
+            label(for="tabQuiz-1_4") Коллеге
+          .firstStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-1_5" name="forWhom")
+            label(for="tabQuiz-1_5") Ребенку
+          .firstStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-1_6" name="forWhom")
+            label(for="tabQuiz-1_6") Другое
+        .stepOne-pick__next.step__next
+          p Далее
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepTwo.stepTwo
+        .stepTwo-pick__number.step__number Шаг 2/9
+        .stepTwo-pick__title.step__title В каком городе планируете поступать?
+        .stepTwo-pick__wrapper.step-select-wrapper
+          .step__select(data-select data-search id="pick-city" data-label="Город" input-placeholder="Любой" data-ajax
+          data-method="cities" multi)
+            select
+              option(value="1")
+          .stepTwo-pick__navigation.step__navigation
+            .stepTwo-pick__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .stepTwo-pick__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepThree.stepThree
+        .stepThree-pick__number.step__number Шаг 3/9
+        .stepThree-pick__title.step__title Какое образование уже есть?
+        .stepThree-pick__radioBtns.step__radioBtns.active
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_1" name="class" checked)
+            label(for="tabQuiz-3_1") 9 классов
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_2" name="class")
+            label(for="tabQuiz-3_2") Колледж/техникум
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_3" name="class")
+            label(for="tabQuiz-3_3") 11 классов
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_4" name="class")
+            label(for="tabQuiz-3_4") 11 классов
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_5" name="class")
+            label(for="tabQuiz-3_5") Училище
+          .thirdStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-3_6" name="class")
+            label(for="tabQuiz-3_6") Неоконченное высшее
+        .stepThree-pick__navigation.step__navigation
+          .stepThree-pick__back.step__back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            p Назад
+          .stepThree-pick__next.step__next
+            p Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepFour.stepFour
+        .stepFour-pick__number.step__number Шаг 4/9
+        .stepFour-pick__title.step__title Куда планируете поступать?
+        .stepFour-pick__radioBtns.step__radioBtns.column
+          .fourthStepRadio__btn.step__radioBtn.active
+            input(type="radio" autocomplete="off" id="tabQuiz-4_1" name="where" checked)
+            label(for="tabQuiz-4_1") Вуз
+          .fourthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-4_2" name="where")
+            label(for="tabQuiz-4_2") Колледж/техникум
+          .fourthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-4_3" name="where")
+            label(for="tabQuiz-4_3") Училище
+        .stepFour-pick__navigation.step__navigation
+          .stepFour-pick__back.step__back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            p Назад
+          .stepFour-pick__next.step__next
+            p Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepFive.stepFive
+        .stepFive-pick__number.step__number Шаг 5/9
+        .stepFive-pick__title.step__title Какую форму обучения предпочитаете?
+        .stepFive-pick__radioBtns.step__radioBtns.column
+          .fifthStepRadio__btn.step__radioBtn.active
+            input(type="radio" autocomplete="off" id="tabQuiz-5_1" name="form" checked)
+            label(for="tabQuiz-5_1") Очную
+          .fifthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-5_2" name="form")
+            label(for="tabQuiz-5_2") Заочную
+          .fifthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-5_3" name="form")
+            label(for="tabQuiz-5_3") Дистанционную
+        .stepFive-pick__navigation.step__navigation
+          .stepFive-pick__back.step__back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            p Назад
+          .stepFive-pick__next.step__next
+            p Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepSix.stepSix
+        .stepSix-pick__number.step__number Шаг 6/9
+        .stepSix-pick__title.step__title Рассматриваете платное обучение?
+        .stepSix-pick__radioBtns.step__radioBtns.column
+          .SixStepRadio__btn.step__radioBtn.active
+            input(type="radio" autocomplete="off" id="tabQuiz-6_1" name="pay" checked)
+            label(for="tabQuiz-6_1") Нет, только бюджет
+          .SixStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-6_2" name="pay")
+            label(for="tabQuiz-6_2") Да, планирую учиться платно
+          .SixStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-6_3" name="pay")
+            label(for="tabQuiz-6_3") Возможны оба варианта
+        .stepSix-pick__navigation.step__navigation
+          .stepSix-pick__back.step__back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            p Назад
+          .stepSix-pick__next.step__next
+            p Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepSeven.stepSeven
+        .stepSeven-pick__number.step__number Шаг 7/9
+        .stepSeven-pick__title.step__title Какая специальность интересует?
+        .stepSeven-pick__wrapper.step-select-wrapper
+          .step__select(data-select data-search id="pick-specialization" data-label="Специальность" input-placeholder="Любая"
+            data-ajax
+            data-method="directions" multi)
+            select
+              option(value="1")
+          .stepSeven-pick__navigation.step__navigation
+            .stepSeven-pick__back.step__back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              p Назад
+            .stepSeven-pick__next.step__next
+              p Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepEight.stepEight
+        .stepEight-pick__number.step__number Шаг 8/9
+        .stepEight-pick__title.step__title Как скоро планируете поступать?
+        .stepEight-pick__radioBtns.step__radioBtns
+          .eighthStepRadio__btn.step__radioBtn.active
+            input(type="radio" autocomplete="off" id="tabQuiz-9_1" name="exist_education" checked)
+            label(for="tabQuiz-9_1") Как можно быстрее
+          .eighthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-9_2" name="exist_education")
+            label(for="tabQuiz-9_2") Месяц
+          .eighthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-9_3" name="exist_education")
+            label(for="tabQuiz-9_3") Квартал
+          .eighthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-9_4" name="exist_education")
+            label(for="tabQuiz-9_4") Полгода
+          .eighthStepRadio__btn.step__radioBtn
+            input(type="radio" autocomplete="off" id="tabQuiz-9_5" name="exist_education")
+            label(for="tabQuiz-9_5") Год
+        .stepEight-pick__navigation.step__navigation
+          .stepEight-pick__back.step__back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            p Назад
+          .stepEight-pick__next.step__next
+            p Далееё
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .tabs-pick__stepNine.stepNine
+        .stepNine-pick__number.step__number Шаг 9/9
+        .stepNine-pick__title.step__title Отлично, ваша подборка готова! 🥳
+        .step__subtitle Оставьте свои контакты, чтобы мы могли вам ее отправить
+        .stepNine-pick__info.step-info
+          .step-info__input
+            input(type="text" autocomplete="off" id="tabs-pick-name" name="step_name" placeholder="Как вас зовут?")
+            p Поле не должно быть пустым
+          .step-info__input
+            input(type="tel" autocomplete="off" id="tabs-pick-phone" data-tel-input max-length="18" name="step_number" placeholder="Номер телефона")
+            p Поле не должно быть пустым
+          .step-info__input
+            input(type="text" autocomplete="off" id="tabs-pick-email" name="step_email" placeholder="E-mail")
+            p Поле не должно быть пустым
+          button.step__btn(type="submit") Получить подборку
+        .step__personal Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+      .tabs-pick__final.final-tabs-pick
+        .final-tabs-pick__icon.-ibg_contain
+          img(src="img/icons/thanksCheck.svg" alt="check icon")
+        .final-tabs-pick__title Отлично, спасибо!
+        .final-tabs-pick__desc Мы отправили подборку вам на почту. Если подборка не приходит — проверьте спам, возможно, она попала туда.
+
+

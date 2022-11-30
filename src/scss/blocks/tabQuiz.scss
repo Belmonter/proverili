@@ -1,0 +1,329 @@
+@use 'sass:math';
+
+@mixin quizBtn {
+  cursor: pointer;
+  width: 108px;
+  height: 44px;
+  padding: 12px 20px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  background-color: $mainColor;
+  border-radius: 12px;
+  p {
+    font-size: rem(16);
+    line-height: math.div(20, 16);
+    color: $white;
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    transform: rotate(-90deg);
+    fill: $white;
+  }
+}
+@mixin visibleStep {
+  opacity: 0;
+  height: 0;
+  transform: scale(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.5s ease 0s;
+  &.active {
+    height: 100%;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tabs-pick {
+  width: 100%;
+  min-height: 372px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease 0s;
+}
+.step {
+  &__number {
+    text-align: center;
+    line-height: math.div(20, 16);
+    @include adaptiveValue("font-size", 16, 12);
+    color: $grey3;
+  }
+  &__title {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+    @include adaptiveValue("font-size", 32, 16, 768, 360, 1);
+    line-height: math.div(36, 32);
+  }
+  &__next {
+    @include quizBtn;
+  }
+  &__back {
+    @include quizBtn;
+    background-color: $white;
+    border: 1px solid $grey1;
+    p {
+      color: $mainColor;
+    }
+    svg {
+      transform: rotate(90deg);
+      fill: $mainColor;
+    }
+  }
+  &__radioBtns {
+    @include adaptiveValue("margin-top", 40, 16);
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 292px);
+    gap: 8px;
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
+    }
+    &.column {
+      grid-template-columns: 592px;
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    &.yz-column {
+      @include adaptiveValue("grid-template-columns", 512, 296, 970, 360, 1);
+    }
+  }
+  &__radioBtn {
+    cursor: pointer;
+    width: 100%;
+    padding: 18px 16px;
+    background-color: $inputBackground;
+    border-radius: 16px;
+    transition: all 0.3s ease 0s;
+    &.active {
+      box-shadow: 0 0 0 1px $mainColor;
+      background-color: $white;
+    }
+    input {
+      cursor: pointer;
+      appearance: none;
+      position: absolute;
+    }
+    label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: math.div(20, 16);
+      &::after {
+        cursor: pointer;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: inherit;
+        border: 1px solid $grey1;
+        border-radius: 50%;
+      }
+    }
+    input:checked + label:after {
+      background-color: $mainColor;
+      background-image: url("@img/icons/check.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 14px 14px;
+    }
+  }
+  &__navigation {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    .step__next, .step__back {
+      margin: 0 0 0 0;
+    }
+  }
+  &__select {
+    margin: 40px auto 0;
+    @include adaptiveValue("margin-top", 40, 16);
+    @include adaptiveValue("width", 590, 296);
+  }
+  &__subtitle {
+    text-align: center;
+    margin-top: 8px;
+    line-height: math.div(20, 16);
+    @include adaptiveValue("font-size", 16, 14);
+    color: rgba($mainColor, 0.5);
+  }
+  &__btn {
+    cursor: pointer;
+    width: 224px;
+    height: 56px;
+    background-color: $mainColor;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: math.div(20, 16);
+    color: $white;
+    @media (max-width: 551px) {
+      width: 100%;
+    }
+  }
+  &__personal {
+    @include adaptiveValue("margin-top", 32, 8);
+    text-align: center;
+    font-size: rem(12);
+    line-height: math.div(20, 12);
+    color: $grey3;
+    a {
+      color: $mainColor;
+      text-decoration: underline;
+    }
+  }
+}
+
+.step-info {
+  width: 100%;
+  @include adaptiveValue("margin-top", 40, 16);
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+  &__input {
+    width: 100%;
+    flex: 1 1;
+    input {
+      width: 224px;
+      height: 56px;
+      background: $inputBackground;
+      border-radius: 16px;
+      padding: 18px 16px;
+      @include adaptiveValue("font-size", 16, 14);
+      line-height: math.div(20, 16);
+      outline: none;
+      &::placeholder {
+        color: $grey3;
+      }
+      &:hover {
+        box-shadow: 0 0 0 1px rgba($grey3, 0.3);
+      }
+      &:focus {
+        background-color: $white;
+        box-shadow: 0 0 0 1px rgba($mainColor, 1);
+      }
+      @media (max-width: 551px) {
+        width: 100%;
+      }
+    }
+    p {
+      display: none;
+      margin-top: 8px;
+      font-size: rem(12);
+      line-height: math.div(12, 12);
+      color: #FF0000;
+    }
+    &.error {
+      input {
+        background: rgba(255, 0, 0, 0.08);
+        border: 1px solid #FF0000;
+      }
+      p {
+        display: block;
+      }
+    }
+  }
+}
+
+.step-select-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 82%;
+  .step__navigation {
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+}
+
+.thanks-yzQuiz {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  &.active {
+    display: flex;
+  }
+  &__icon {
+    @include adaptiveValue("width", 72, 56);
+    @include adaptiveValue("height", 72, 56);
+  }
+  &__title {
+    @include adaptiveValue("margin-top", 32, 24);
+    font-weight: 500;
+    @include adaptiveValue("font-size", 32, 18);
+    line-height: math.div(36, 32);
+  }
+  &__subtitle {
+    max-width: 492px;
+    margin-top: 8px;
+    @include adaptiveValue("font-size", 16, 14);
+    line-height: math.div(20, 16);
+    color: $grey3;
+  }
+}
+.final-tabs-pick {
+  @include visibleStep;
+  align-items: center;
+  &__icon {
+    width: 72px;
+    height: 72px;
+  }
+  &__title {
+    margin-top: 32px;
+    font-weight: 500;
+    font-size: rem(32);
+    line-height: math.div(36, 32);
+  }
+  &__desc {
+    text-align: center;
+    max-width: 492px;
+    margin-top: 8px;
+    line-height: math.div(20, 16);
+    color: $grey3;
+  }
+}
+
+
+.stepOne {
+  @include visibleStep;
+}
+.stepTwo {
+  @include visibleStep;
+}
+.stepThree {
+  @include visibleStep;
+}
+.stepFour {
+  @include visibleStep;
+}
+.stepFive {
+  @include visibleStep;
+}
+.stepSix {
+  @include visibleStep;
+}
+.stepSeven {
+  @include visibleStep;
+}
+.stepEight {
+  @include visibleStep;
+}
+.stepNine {
+  @include visibleStep;
+}
+

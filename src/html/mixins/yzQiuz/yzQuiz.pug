@@ -1,0 +1,9 @@
+mixin yzQuiz
+  .yzQuiz__wrapper
+    .yzQuiz
+      .yzQuiz__about
+        .yzQuiz__title Подберём вуз мечты
+        .yzQuiz__desc Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов
+        .yzQuiz__img
+          img(src="img/icons/quiz-item.svg" alt="quiz icon")
+      +quiz('quiz-content_', 'content')

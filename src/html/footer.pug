@@ -1,0 +1,87 @@
+footer.footer
+  .footer__container
+    .footer__wrapper
+      .footer__left.left-footer
+        .left-footer__logo.-ibg_contain
+          img(src="img/icons/Logo.svg" alt="logo")
+        .spollers(data-spollers data-one-spoller)
+          .spollers__item
+            button.spollers__title(type="button" data-spoller data-spoller-close) Высшее
+            .spollers__body.spoller-high
+          .spollers__item
+            button.spollers__title(type="button" data-spoller data-spoller-close) Курсы
+            .spollers__body.spoller-course
+          .spollers__item
+            button.spollers__title(type="button" data-spoller data-spoller-close) Среднее
+            .spollers__body.spoller-middle
+          .spollers__item
+            button.spollers__title(type="button" data-spoller data-spoller-close) Информация
+            .spollers__body.spoller-info
+        .left-footer__email.email-footer
+          svg.email-footer__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Envelope")
+          .email-footer__wrapper
+            a(href="mailto:proverili@info.ru").email-footer__email proverili@info.ru
+            .email-footer__desc Пишите, если есть вопросы
+        .left-footer__phone.phone-footer
+          svg.phone-footer__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Phone")
+          .phone-footer__wrapper
+            a(href="href:tel:+78005654423").phone-footer__phone +7 800 565 44 23
+            .phone-footer__desc Звоните, если нужна помощь
+        .left-footer__social
+          a(href="#")
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-vk")
+          a(href="#")
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-facebook")
+
+      .footer__right.right-footer
+        .right-footer__items.items-right-footer
+          .items-right-footer__wrapper
+            .right-footer__item.item-right-footer(data-da=".spoller-high, 900")
+              .item-right-footer__title Высшее
+              a(href="#") Вузы
+              a(href="#") Специальности
+              a(href="#") Профессии
+              a(href="#") Профориентация
+              a(href="#") Подготовка к ЕГЭ
+            .right-footer__item.item-right-footer(data-da=".spoller-course, 900")
+              .item-right-footer__title.mt32 Среднее
+              a(href="#") Колледжи
+              a(href="#") Техникумы
+              a(href="#") Училища
+              a(href="#") Специальности
+              a(href="#") Профессии
+          .items-right-footer__wrapper(data-da=".spoller-middle, 900")
+            .right-footer__item.item-right-footer
+              .item-right-footer__title Курсы
+              a(href="#") Аналитика
+              a(href="#") Маркетинг
+              a(href="#") Дизайн
+              a(href="#") Финансы
+              a(href="#") Бизнес и управление
+              a(href="#") Финансы
+              a(href="#") Иностранные языки
+              a(href="#") Творчество и создание контента
+              a(href="#") Саморазвитие и soft skills
+              a(href="#") Рукоделие
+              a(href="#") Красота и здоровье
+              a(href="#") Все курсы
+          .items-right-footer__wrapper(data-da=".spoller-info, 900")
+            .right-footer__item.item-right-footer
+              .item-right-footer__title Информация
+              a(href="#") О сервисе
+              a(href="#") Отзывы
+              a(href="#") Новости
+              a(href="#") Вакансии
+              a(href="#") Размещение рекламы
+  .footer__personal.personal-footer
+    .personal-footer__container
+      .personal-footer__wrapper
+        .personal-footer__policy(data-da=".left-footer, 590, last")
+          a(href="#").personal-footer__data Обработка персональных данных
+          a(href="#").personal-footer__agreement Пользовательское соглашение
+        .personal-footer__design(data-da=".left-footer, 590, last") Дизайн — #[span Crauch]
+

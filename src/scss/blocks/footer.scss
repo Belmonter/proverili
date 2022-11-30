@@ -1,0 +1,134 @@
+@use "sass:math";
+
+@mixin footerContactItem {
+  @include adaptiveValue("margin-top", 32, 24);
+  display: flex;
+  column-gap: 8px;
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+  a {
+    display: block;
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: math.div(24, 18);
+  }
+  &__desc {
+    margin-top: 4px;
+    font-size: rem(12);
+    line-height: math.div(12, 12);
+    color: $grey3;
+  }
+}
+
+.footer {
+  padding-top: 48px;
+  background-color: $white;
+  &__wrapper {
+    padding-bottom: 28px;
+    display: flex;
+    @include adaptiveValue("column-gap", 319, 50, 1216, 900, 1);
+  }
+  .left-footer {
+    min-width: 201px;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    &__logo {
+      width: 170px;
+      height: 44px;
+    }
+    .email-footer {
+      @include footerContactItem
+    }
+    .phone-footer {
+      margin-top: 16px;
+      @include footerContactItem;
+      @media (max-width: 900px) {
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba($mainColor, 0.1);
+      }
+    }
+    &__social {
+      @include adaptiveValue("margin-top", 32, 24);
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .right-footer {
+    flex-grow: 1;
+    @media (max-width: 900px) {
+      display: none;
+    }
+    .items-right-footer {
+      display: flex;
+      justify-content: space-between;
+
+    }
+  }
+  .personal-footer {
+    padding: 16px 0;
+    border-top: 1px solid rgba($mainColor, 0.1);
+    @media (max-width: 590px) {
+      display: none;
+    }
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__policy {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      font-size: rem(12);
+      line-height: math.div(12, 12);
+      color: rgba($mainColor, 0.6);
+      @media (max-width: 590px) {
+        margin-top: 16px;
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+    }
+    &__design {
+      color: $grey3;
+      @media (max-width: 590px) {
+        margin-top: 24px;
+      }
+      span {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.item-right-footer {
+  &__title {
+    margin-bottom: 6px;
+    font-weight: 500;
+    line-height: math.div(20, 16);
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  a {
+    display: block;
+    font-size: rem(14);
+    line-height: math.div(20, 14);
+    color: $grey3;
+    transition: all 0.3s ease 0s;
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+    &:hover {
+      color: $mainGreen;
+    }
+  }
+}

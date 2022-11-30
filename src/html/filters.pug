@@ -1,0 +1,22 @@
+include mixins/tabs/tabQuiz
+include mixins/tabs/quiz
+include mixins/tabs/tabFilter
+
+.filters
+  .filters__container
+    .tabs(data-tabs)
+      nav.tabs__navigation(data-tabs-titles)
+        button.tabs__title._tab-active(type="button") Найду сам
+        button.tabs__title.tip(type="button") Подберём мы
+      .tabs__content(data-tabs-body)
+        .tabs__body
+          +tabFilter
+        .tabs__body.p24
+          +quiz('main-tab_', 'filter')
+
+
+
+
+
+
+

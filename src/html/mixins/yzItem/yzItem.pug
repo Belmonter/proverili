@@ -1,0 +1,121 @@
+mixin yzItem(advertising, itemClass, checked)
+  div(class=itemClass)
+    .yzItem__left.left-yz
+      a(href="#").left-yz__logo.logo-yz
+        .logo-yz__img
+          img(src="img/yz_logo.png" alt="yz logo")
+          .logo-yz__rating.rating-yz
+            svg.rating-yz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-Black_star")
+            .rating-yz__rate 4.8
+        a(href="#").left-yz__review #[span 239] отзывов
+      a(href="#").left-yz__title Театральный институт им. Бориса Щукина при Государственном академическом театре им. Евгения Вахтангова
+    .yzItem__center.center-yz
+      if checked
+        a(href="#").center-yz__title.checked Театральный институт им. Бориса Щукина при Государственном академическом театре им. Евгения Вахтангова
+      else
+        a(href="#").center-yz__title Театральный институт им. Бориса Щукина при Государственном академическом театре им. Евгения Вахтангова
+      .center-yz__about.yz-about
+        .yz-about__info
+          .yz-about__price.price-item-yz
+            .price-item-yz__price от #[span 126 990]₽
+            .price-item-yz__year.year-item-price
+              .year-item-price__text стоимость/год
+              .year-item-price__icon
+                svg
+                  use(xlink:href="img/sprite/icons.svg#svg-Black_question")
+              .year-item-price__popup Данные представлены за 2021 год
+                .year-item-price__arrow
+                  img(src="img/icons/popup-question-arrow.svg" alt="poligon")
+          .yz-about__score.score-yz
+            .score-yz__number 82,8
+            .score-yz__text проходной балл
+        .yz-about__tags.tags-yz
+          .tags-yz__item.item-tag-yz
+            svg.item-tag-yz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-check")
+            .item-tag-yz__text Легко поступить
+          .tags-yz__item.item-tag-yz
+            svg.item-tag-yz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-check")
+            .item-tag-yz__text Дистанционно
+          .tags-yz__item.item-tag-yz
+            svg.item-tag-yz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-check")
+            .item-tag-yz__text Низкая стоимость
+    .yzItem__right.right-yz
+      .right-yz__head.head-yz-right
+        if advertising
+          .head-yz-right__advertising Реклама
+        svg.head-yz-right__like
+          use(xlink:href="img/sprite/icons.svg#svg-heart")
+        svg.head-yz-right__compare
+          use(xlink:href="img/sprite/icons.svg#svg-Compare")
+      .right-yz__btns.btn-right-yz
+        a(href="#").btn-right-yz__about Подробнее
+        if advertising
+          a(href="tel:+77777777777").btn-right-yz__call.call-yz
+            svg.call-yz__icon
+              use(xlink:href="img/sprite/icons.svg#svg-white_phone")
+            .call-yz__text Связаться
+        else
+          .btn-right-yz__call.call-yz(data-popup="#popup-count")
+            .call-yz__text Проверить шансы
+    //.yzItem__mobile.mobile-yzItem
+    //  .mobile-yzItem__head
+    //    .mobile-yzItem__wrapper
+    //      .head-yz-right__advertising Реклама
+    //      .logo-yz__img
+    //        img(src="img/yz_logo.png" alt="yz logo")
+    //        .logo-yz__rating.rating-yz
+    //          svg.rating-yz__icon
+    //            use(xlink:href="img/sprite/icons.svg#svg-Black_star")
+    //          .rating-yz__rate 4.8
+    //      .mobile-yzItem__compare
+    //        svg.head-yz-right__like
+    //          use(xlink:href="img/sprite/icons.svg#svg-heart")
+    //        svg.head-yz-right__compare
+    //          use(xlink:href="img/sprite/icons.svg#svg-Compare")
+    //    if checked
+    //      a(href="#").center-yz__title.checked Театральный институт им. Бориса Щукина при Государственном академическом театре им. Евгения Вахтангова
+    //    else
+    //      a(href="#").center-yz__title Театральный институт им. Бориса Щукина при Государственном академическом театре им. Евгения Вахтангова
+    //  .yz-about__tags.tags-yz
+    //    .tags-yz__item.item-tag-yz
+    //      svg.item-tag-yz__icon
+    //        use(xlink:href="img/sprite/icons.svg#svg-check")
+    //      .item-tag-yz__text Легко поступить
+    //    .tags-yz__item.item-tag-yz
+    //      svg.item-tag-yz__icon
+    //        use(xlink:href="img/sprite/icons.svg#svg-check")
+    //      .item-tag-yz__text Дистанционно
+    //    .tags-yz__item.item-tag-yz
+    //      svg.item-tag-yz__icon
+    //        use(xlink:href="img/sprite/icons.svg#svg-check")
+    //      .item-tag-yz__text Низкая стоимость
+    //  .yz-about__info
+    //    .yz-about__price.price-item-yz
+    //      .price-item-yz__price от #[span 126 990]₽
+    //      .price-item-yz__year.year-item-price
+    //        .year-item-price__text стоимость/год
+    //        .year-item-price__icon
+    //          svg
+    //            use(xlink:href="img/sprite/icons.svg#svg-Black_question")
+    //        .year-item-price__popup Данные представлены за 2021 год
+    //          .year-item-price__arrow
+    //            img(src="img/icons/popup-question-arrow.svg" alt="poligon")
+    //    .yz-about__score.score-yz
+    //      .score-yz__number
+    //        svg
+    //          use(xlink:href="img/sprite/icons.svg#svg-EyeSlash")
+    //      .score-yz__text проходной балл
+    //  .right-yz__btns.btn-right-yz
+    //    a(href="#").btn-right-yz__about Подробнее
+    //    if advertising
+    //      a(href="tel:+77777777777").btn-right-yz__call.call-yz
+    //        svg.call-yz__icon
+    //          use(xlink:href="img/sprite/icons.svg#svg-white_phone")
+    //        .call-yz__text Связаться
+    //    else
+    //      .btn-right-yz__call.call-yz(data-popup="#popup-count")
+    //        .call-yz__text Проверить шансы

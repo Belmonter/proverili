@@ -1,0 +1,90 @@
+mixin tabFilter
+  form(id="filter-form")
+    .tabs__top-items.items-tabs-top(data-da=".filter-popup__selects, 940, first")
+      .items-tabs-top__sel(data-select data-filter data-search id="filter-city" data-label="Город" input-placeholder="Любой" data-ajax
+      data-method="cities")
+        select(name="cities[]" multiple)
+      .items-tabs-top__sel(data-select data-filter id="filter-education" data-label="Форма обучения" input-placeholder="Любая")
+        select(name="form")
+          option
+          option(value="1") Очно
+          option(value="2" selected) Заочно
+          option(value="3") Очно-заочно
+          option(value="4") Дистанционно
+      .items-tabs-top__sel(data-select data-filter id="filter-direction" data-label="Направления обучения" input-placeholder="Все" data-search data-ajax
+      data-method="directions")
+        select(name="directions[]" multiple)
+      button.items-tabs-top__btn.load(type="submit" form="filter-form" data-da=".footer-filterPopup__wrapper, 940, first")
+        p Показать (345)
+    .tabs__bottom-items.items-tabs-bottom.active
+      .items-tabs-bottom__wrapper(data-da=".filter-popup__selects, 940, last")
+        .items-tabs-bottom__sel(data-select data-filter id="filter-specialization" data-search data-label="Специализации вузов" input-placeholder="Все")
+          select(name="spec" multiple)
+            option
+            option(value="1") Авиационно-технический
+            option(value="2") Авиационный
+            option(value="3" selected) Автодорожный
+            option(value="4") Аграрный
+            option(value="5" selected) Агротехнический
+            option(value="6") Автомобильно-дорожный
+            option(value="7") Автомобильно-дорожный
+        .items-tabs-bottom__slider.slider-tabs-bottom
+          .slider-tabs-bottom__wrapper
+            .slider-tabs-bottom__label Стоимость год (тыс ₽)
+            .slider-tabs-bottom__inputs.slider-prices
+              input.slider-tabs-bottom__input.from(type='text' name="price[from]")
+              input.slider-tabs-bottom__input.to(type='text' name="price[to]")
+          .slider-tabs-bottom__range(id='range_slider' data-from='15000' data-to='328000' data-step='500')
+        .items-tabs-bottom__sel(data-select data-filter id="filter-profession" data-search data-label="Профессии" input-placeholder="Все")
+          select(name="professions[]" multiple)
+            option
+            option(value="1") Физик
+            option(value="2") 1
+            option(value="3") 2
+            option(value="4") 3
+        .items-tabs-bottom__sel(data-select data-filter id="filter-ege" data-search data-label="Предметы ЕГЭ" input-placeholder="Все")
+          select(name="exams" multiple)
+            option
+            option(value="1") Биология
+            option(value="2") География
+            option(value="3") Иностранный язык
+            option(value="4") История
+            option(value="5") Литература
+            option(value="6") Математика
+      .items-tabs-bottom__mobile.mobile-tabs
+        .mobile-tabs__filterBtn.filterBtn-mobile
+          svg.filterBtn-mobile__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Filters")
+          .filterBtn-mobile__text Фильтры
+        .mobile-tabs__sortBtn
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-ArrowsDownUp")
+      .items-tabs-bottom__tags.tags-tabs
+        .tags-tabs__item(data-name="budget")
+          input(type="checkbox" name="budget" value="1")
+          svg.tags-tabs__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Cap")
+          .tags-tabs__text Бюджет
+        .tags-tabs__item(data-name="gos")
+          input(type="checkbox" name="gos" value="1")
+          svg.tags-tabs__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Gov")
+          .tags-tabs__text Государственные
+        .tags-tabs__item(data-name="hostel")
+          input(type="checkbox" name="hostel" value="1")
+          svg.tags-tabs__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Bed")
+          .tags-tabs__text Общежитие
+        .tags-tabs__item(data-name="military")
+          input(type="checkbox" name="military" value="1")
+          svg.tags-tabs__icon
+            use(xlink:href="img/sprite/icons.svg#svg-Army")
+          .tags-tabs__text Военная кафедра
+      .items-tabs-bottom__btn Показать (345)
+    .tabs__bottom-items__footer.footer-tabs
+      .collapse-tabs.active
+        .collapse-tabs__icon
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+        .collapse-tabs__text Развернуть
+      .reset-tabs(data-da=".footer-filterPopup__wrapper, 940, last") Сбросить фильтры

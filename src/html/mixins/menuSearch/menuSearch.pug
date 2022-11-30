@@ -1,0 +1,13 @@
+mixin menuSearch
+  .header__university-search.university-search
+    .university-search__input
+      input(type="text" autocomplete="off" placeholder="Учебное заведение, специальность, профессия или курс")
+      svg.university-search__icon
+        use(xlink:href="img/sprite/icons.svg#svg-Search")
+      svg.university-search-icon__arrow
+        use(xlink:href="img/sprite/icons.svg#svg-ArrowLeft")
+      svg.university-search-icon__close
+        use(xlink:href="img/sprite/icons.svg#svg-search_close")
+    .university-search__close Закрыть
+    .university-search__wrapper
+      .university-search__content

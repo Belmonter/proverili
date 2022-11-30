@@ -1,0 +1,39 @@
+@use 'sass:math';
+@import 'nouislider/dist/nouislider.css';
+
+.noUi-target {
+  margin-top: -2px;
+  margin-left: 3%;
+  margin-right: 3%;
+  height: 2px;
+  background: transparent;
+  border: unset;
+  box-shadow: unset;
+}
+.noUi-base {
+  margin-top: -1px;
+  height: 2px;
+}
+.noUi-connect {
+  background: $mainColor;
+}
+.noUi-handle::before, .noUi-handle::after {
+  display: none;
+}
+.noUi-horizontal .noUi-handle {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-color: $white;
+  border: 2px solid #383838;
+  border-radius: 50%;
+  right: -3.5%;
+  top: -7px;
+  @media (max-width: 940px) {
+    right: -1.5%;
+  }
+  @media (max-width: 500px) {
+    right: -2%;
+  }
+}
+

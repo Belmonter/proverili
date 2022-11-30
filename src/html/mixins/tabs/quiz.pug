@@ -1,0 +1,210 @@
+mixin quiz(labelPartFor, position)
+  .quiz-container
+    form.quiz-form
+      .quiz-form__step.active
+        .quiz-form__step-head
+          .quiz-form__step-title Для кого вы ищете учебное заведение?
+        .quiz-form__step-radios
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-1")
+            input(type="radio" id=labelPartFor + "step-1-1" name="forWhom" value="Себе")
+            div.quiz-form__step-radio_content Себе
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-2")
+            input(type="radio" id=labelPartFor + "step-1-2" name="forWhom" value="Супругу/супруге")
+            div.quiz-form__step-radio_content Супругу/супруге
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-3")
+            input(type="radio" id=labelPartFor + "step-1-3" name="forWhom" value="Родственнику")
+            div.quiz-form__step-radio_content Родственнику
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-4")
+            input(type="radio" id=labelPartFor + "step-1-4" name="forWhom" value="Коллеге")
+            div.quiz-form__step-radio_content Коллеге
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-5")
+            input(type="radio" id=labelPartFor + "step-1-5" name="forWhom" value="Ребенку")
+            div.quiz-form__step-radio_content Ребенку
+          label.quiz-form__step-radio(for=labelPartFor + "step-1-6")
+            input(type="radio" id=labelPartFor + "step-1-6" name="forWhom" value="Другое")
+            div.quiz-form__step-radio_content Другое
+        .quiz-form__step-next
+          | Далее
+          svg
+            use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title В каком городе планируете поступать?
+        .step-select-wrapper
+          .step__select(quiz-select data-search data-label="Город" input-placeholder="Любой" data-ajax data-method="cities")
+            select(name="cities" multiple)
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Какое образование уже есть?
+        .quiz-form__step-radios
+          label.quiz-form__step-radio(for=labelPartFor + "step-3-1")
+            input(type="radio" id=labelPartFor + "step-3-1" name="current" value="9 классов")
+            div.quiz-form__step-radio_content 9 классов
+          label.quiz-form__step-radio(for=labelPartFor + "step-3-2")
+            input(type="radio" id=labelPartFor + "step-3-2" name="current" value="Колледж/техникум")
+            div.quiz-form__step-radio_content Колледж/техникум
+          label.quiz-form__step-radio(for=labelPartFor + "step-3-3")
+            input(type="radio" id=labelPartFor + "step-3-3" name="current" value="11 классов")
+            div.quiz-form__step-radio_content 11 классов
+          label.quiz-form__step-radio(for=labelPartFor + "step-3-4")
+            input(type="radio" id=labelPartFor + "step-3-4" name="current" value="Училище")
+            div.quiz-form__step-radio_content Училище
+          label.quiz-form__step-radio(for=labelPartFor + "step-3-5")
+            input(type="radio" id=labelPartFor + "step-3-5" name="current" value="Неоконченное высшее")
+            div.quiz-form__step-radio_content Неоконченное высшее
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Куда планируете поступать?
+        .quiz-form__step-radios.column
+          label.quiz-form__step-radio(for=labelPartFor + "step-4-1")
+            input(type="radio" id=labelPartFor + "step-4-1" name="where" value="Вуз")
+            div.quiz-form__step-radio_content Вуз
+          label.quiz-form__step-radio(for=labelPartFor + "step-4-2")
+            input(type="radio" id=labelPartFor + "step-4-2" name="where" value="Колледж/техникум")
+            div.quiz-form__step-radio_content Колледж/техникум
+          label.quiz-form__step-radio(for=labelPartFor + "step-4-3")
+            input(type="radio" id=labelPartFor + "step-4-3" name="where" value="Училище")
+            div.quiz-form__step-radio_content Училище
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Какую форму обучения предпочитаете?
+        .quiz-form__step-radios.column
+          label.quiz-form__step-radio(for=labelPartFor + "step-5-1")
+            input(type="radio" id=labelPartFor + "step-5-1" name="form" value="Очную")
+            div.quiz-form__step-radio_content Очную
+          label.quiz-form__step-radio(for=labelPartFor + "step-5-2")
+            input(type="radio" id=labelPartFor + "step-5-2" name="form" value="Заочную")
+            div.quiz-form__step-radio_content Заочную
+          label.quiz-form__step-radio(for=labelPartFor + "step-5-3")
+            input(type="radio" id=labelPartFor + "step-5-3" name="form" value="Дистанционную")
+            div.quiz-form__step-radio_content Дистанционную
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Рассматриваете платное обучение?
+        .quiz-form__step-radios.column
+          label.quiz-form__step-radio(for=labelPartFor + "step-6-1")
+            input(type="radio" id=labelPartFor + "step-6-1" name="pay" value="Нет, только бюджет")
+            div.quiz-form__step-radio_content Нет, только бюджет
+          label.quiz-form__step-radio(for=labelPartFor + "step-6-2")
+            input(type="radio" id=labelPartFor + "step-6-2" name="pay" value="Да, планирую учиться платно")
+            div.quiz-form__step-radio_content Да, планирую учиться платно
+          label.quiz-form__step-radio(for=labelPartFor + "step-6-3")
+            input(type="radio" id=labelPartFor + "step-6-3" name="pay" value="Возможны оба варианта")
+            div.quiz-form__step-radio_content Возможны оба варианта
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Какая специальность интересует?
+        .step-select-wrapper
+          .step__select(quiz-select data-search id="pick-specialization" data-label="Специальность" input-placeholder="Любая"
+            data-ajax data-method="directions")
+            select(name="directions[]" multiple)
+          .quiz-form__step-navigation
+            .quiz-form__step-back
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+              | Назад
+            .quiz-form__step-next
+              | Далее
+              svg
+                use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          .quiz-form__step-title Как скоро планируете поступать?
+        .quiz-form__step-radios
+          label.quiz-form__step-radio(for=labelPartFor + "step-8-1")
+            input(type="radio" id=labelPartFor + "step-8-1" name="period" value="Как можно быстрее")
+            div.quiz-form__step-radio_content Как можно быстрее
+          label.quiz-form__step-radio(for=labelPartFor + "step-8-2")
+            input(type="radio" id=labelPartFor + "step-8-2" name="period" value="Месяц")
+            div.quiz-form__step-radio_content Месяц
+          label.quiz-form__step-radio(for=labelPartFor + "step-8-3")
+            input(type="radio" id=labelPartFor + "step-8-3" name="period" value="Квартал")
+            div.quiz-form__step-radio_content Квартал
+          label.quiz-form__step-radio(for=labelPartFor + "step-8-4")
+            input(type="radio" id=labelPartFor + "step-8-4" name="period" value="Полгода")
+            div.quiz-form__step-radio_content Полгода
+          label.quiz-form__step-radio(for=labelPartFor + "step-8-5")
+            input(type="radio" id=labelPartFor + "step-8-5" name="period" value="Год")
+            div.quiz-form__step-radio_content Год
+        .quiz-form__step-navigation
+          .quiz-form__step-back
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+            | Назад
+          .quiz-form__step-next
+            | Далее
+            svg
+              use(xlink:href="img/sprite/icons.svg#svg-SelectArrowDown")
+      .quiz-form__step
+        .quiz-form__step-head
+          if position=='filter'
+            .quiz-form__step-title Отлично, ваша подборка готова!
+          if position=='content'
+            .quiz-form__step-title Ваша подборка готова! 🥳 Куда нам отправить её?
+        if position=='filter'
+          .quiz-form__step-subtitle Оставьте свои контакты, чтобы мы могли вам ее отправить
+        .quiz-form__step-info
+          .quiz-form__step-info_input
+            input(type="text" autocomplete="off" name="step_name" placeholder="Как вас зовут?")
+            p Поле не должно быть пустым
+          .quiz-form__step-info_input
+            input(type="tel" autocomplete="off" data-tel-input max-length="18" name="step_number" placeholder="Номер телефона")
+            p Поле не должно быть пустым
+          .quiz-form__step-info_input
+            input(type="email" autocomplete="off" name="step_email" placeholder="E-mail")
+            p Поле не должно быть пустым
+          button.quiz-form__step-btn(type="submit") Получить подборку
+        .quiz-form__step-personal Нажимая на кнопку, вы даете согласие на обработку своих #[a(href="#") Персональных данных]
+      .quiz-form__step.quiz-form__step-final
+        .quiz-form__step-final_icon.-ibg_contain
+          img(src="img/icons/thanksCheck.svg" alt="check icon")
+        .quiz-form__step-final_title Отлично, спасибо!
+        .quiz-form__step-final_desc Мы отправили подборку вам на почту. Если подборка не приходит — проверьте спам, возможно, она попала туда.
+
+
+

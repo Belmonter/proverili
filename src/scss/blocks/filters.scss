@@ -1,0 +1,272 @@
+@use 'sass:math';
+
+.filters {
+  position: relative;
+  z-index: 10;
+}
+.tabs {
+  @media (max-width: 391px) {
+  }
+}
+.items-tabs-top {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  @media (max-width: 940px) {
+    margin-top: 24px;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+  &__sel {
+    @include adaptiveValue("width", 286, 210, 1366, 940, 1);
+    @media (max-width: 940px) {
+      width: 97%;
+    }
+  }
+  &__btn {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptiveValue("width", 286, 210, 1366, 940, 1);
+    height: 56px;
+    background-color: $mainColor;
+    border-radius: 16px;
+    line-height: math.div(20, 16);
+    color: $white;
+    @media (max-width: 940px) {
+      width: 100%;
+    }
+  }
+}
+.items-tabs-bottom {
+  margin-top: 16px;
+  max-height: 1000px;
+  &.collapse {
+    min-height: 0;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    @media (max-width: 940px) {
+      margin-top: 8px;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+    &.active {
+      margin-top: 0;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &__sel {
+    @include adaptiveValue("width", 286, 210, 1366, 940, 1);
+    @media (max-width: 940px) {
+      width: 97%;
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    margin-top: 16px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    background-color: $mainColor;
+    border-radius: 16px;
+    @include adaptiveValue("font-size", 20, 14, 768, 360, 1);
+    line-height: math.div(20, 16);
+    color: $white;
+    @media (max-width: 940px) {
+      display: flex;
+      height: 52px;
+    }
+  }
+}
+.slider-tabs-bottom {
+  @include adaptiveValue("width", 286, 210, 1366, 940, 1);
+  @media (max-width: 940px) {
+    width: 97%;
+  }
+  height: 56px;
+  &__wrapper {
+    padding: 10px 16px;
+    background: $inputBackground;
+    border-radius: 16px;
+    &:hover {
+      box-shadow: 0 0 0 1px rgba($grey3, 1);
+    }
+    &.active {
+      box-shadow: 0 0 0 1px rgba($mainColor, 1);
+      background-color: $white;
+    }
+  }
+  &__label {
+    font-size: rem(12);
+    line-height: math.div(12, 12);
+    color: $grey3;
+  }
+  &__inputs {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__input {
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+    @include adaptiveValue("font-size", 16, 14, 1366, 940, 1);
+    &.from {
+      text-align: left;
+    }
+    &.to {
+      text-align: right;
+    }
+  }
+}
+.tags-tabs {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("column-gap", 8, 4);
+  row-gap: 12px;
+  flex-wrap: wrap;
+  &.mt0 {
+    margin-top: 0;
+  }
+  &__item {
+    cursor: pointer;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    border-radius: 36px;
+    background-color: $inputBackground;
+    transition: all 0.3s ease 0s;
+    input[type="checkbox"] {
+      display: none;
+    }
+    &.active {
+      background-color: $white;
+      box-shadow: 0 0 0 1px $mainColor;
+    }
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+  &__text {
+    font-size: rem(14);
+    line-height: math.div(20, 14);
+  }
+}
+.footer-tabs {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 940px) {
+    display: none;
+  }
+}
+.collapse-tabs {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  &.active {
+    svg {
+      transform: rotate(0deg);
+    }
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #F5F5F5;
+    transition: all 0.3s ease 0s;
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: $mainColor;
+      transform: rotate(180deg);
+      transition: all 0.3s ease 0s;
+    }
+  }
+  &__text {
+    font-size: rem(14);
+    line-height: math.div(20, 14);
+  }
+}
+.reset-tabs {
+  cursor: pointer;
+  font-size: rem(14);
+  line-height: math.div(20, 14);
+  color: $grey3;
+  @media (max-width: 940px) {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobile-tabs {
+  display: none;
+  @media (max-width: 940px) {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+  }
+  &__sortBtn {
+    cursor: pointer;
+    width: 70px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: inherit;
+    border: 1px solid $grey1;
+    border-radius: 12px;
+    @media (max-width: 940px) {
+      position: relative;
+    }
+    svg {
+      @include adaptiveValue("width", 40, 20, 768, 360, 1);
+      @include adaptiveValue("height", 40, 20, 768, 360, 1);
+    }
+  }
+}
+.filterBtn-mobile {
+  cursor: pointer;
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+  background: inherit;
+  border: 1px solid $grey1;
+  border-radius: 12px;
+  &__icon {
+    @include adaptiveValue("width", 40, 20, 768, 360, 1);
+    @include adaptiveValue("height", 40, 20, 768, 360, 1);
+  }
+  &__text {
+    font-size: rem(25);
+    @include adaptiveValue("font-size", 25, 14, 768, 360, 1);
+  }
+}
+
+
+
+
